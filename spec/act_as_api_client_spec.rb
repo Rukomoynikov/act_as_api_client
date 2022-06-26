@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'act_as_api_client'
+require "act_as_api_client"
 
 RSpec.describe ActAsApiClient do
   it "has a version number" do
@@ -20,8 +20,24 @@ RSpec.describe ActAsApiClient do
       act_as_api_client
     end
 
-    methods = [:find, :where, :find_by, :delete, :create, :delete, :update]
+    methods = %i[find where find_by delete create delete update]
 
     expect(SpotifyClient.new).to respond_to(*methods)
   end
+
+  it "throws exception if api client file doesn't exist" do
+    expect {
+      Class.new do
+        act_as_api_client for: :villian_client
+      end
+    }.to raise_error(ActAsApiClient::ClientFileExistingError)
+  end
+
+  # it "calls method from inherited class option 'for' is provided" do
+  #   GithubClient = Class.new do
+  #     act_as_api_client for: :github
+  #   end
+  #
+  #   expect(GithubClient.new.find).to_not raise(StandardError, "Should be defined in inherited class")
+  # end
 end
