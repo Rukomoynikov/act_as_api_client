@@ -7,18 +7,16 @@ RSpec.describe ActAsApiClient do
     expect(ActAsApiClient::VERSION).not_to be nil
   end
 
-  it "responds to act_as_api_client class method" do
-    SpotifyClient = Class.new do
-      act_as_api_client
-    end
+  it "doesn't add any method to general Object class" do
+    expect(Object.new).not_to respond_to(:find)
+  end
 
-    expect(SpotifyClient).to respond_to(:act_as_api_client)
+  it "responds to act_as_api_client class method" do
+    expect(ApiClient).to respond_to(:act_as_api_client)
   end
 
   it "has methods from Active Record" do
-    SpotifyClient = Class.new do
-      act_as_api_client
-    end
+    class SpotifyClient < ApiClient; end
 
     methods = %i[find where find_by delete create delete update]
 
@@ -26,18 +24,18 @@ RSpec.describe ActAsApiClient do
   end
 
   it "throws exception if api client file doesn't exist" do
-    expect {
-      Class.new do
-        act_as_api_client for: :villian_client
+    expect do
+      class WrongClient < ApiClient
+        act_as_api_client for: :wrong_client
       end
-    }.to raise_error(ActAsApiClient::ClientFileExistingError)
+    end.to raise_error(LoadError)
   end
 
-  # it "calls method from inherited class option 'for' is provided" do
-  #   GithubClient = Class.new do
-  #     act_as_api_client for: :github
-  #   end
-  #
-  #   expect(GithubClient.new.find).to_not raise(StandardError, "Should be defined in inherited class")
-  # end
+  it "calls method from inherited class option 'for' is provided" do
+    class GithubClient < ApiClient
+      act_as_api_client for: :github
+    end
+
+    expect { GithubClient.new.find }.to_not raise_error
+  end
 end
