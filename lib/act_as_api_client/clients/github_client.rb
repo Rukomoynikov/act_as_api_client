@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
+require "httparty"
+
 module ActAsApiClient
   module Clients
-    class GithubClient
-      def find
-        p 'fjid'
-      end
+    module GithubClient
+      def find; end
 
       def where
-        p 'fjid'
+        "where"
       end
 
       def find_by
-        p 'fjid'
+        "find_by"
       end
 
       def delete
-        p 'fjid'
+        "delete"
       end
 
       def create
-        p 'fjid'
+        "create"
       end
 
       def update
-        p 'fjid'
+        "update"
       end
     end
   end
