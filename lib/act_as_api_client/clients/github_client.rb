@@ -5,7 +5,9 @@ require "httparty"
 module ActAsApiClient
   module Clients
     module GithubClient
-      def find; end
+      def find
+        "find"
+      end
 
       def where
         "where"

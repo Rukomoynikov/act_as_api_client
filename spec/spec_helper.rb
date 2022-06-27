@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "act_as_api_client"
-require "byebug"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
