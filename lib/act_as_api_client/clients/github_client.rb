@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require_relative 'http_client'
+
+require_relative "http_client"
 
 module ActAsApiClient
   module Clients

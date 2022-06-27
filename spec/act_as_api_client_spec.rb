@@ -54,8 +54,8 @@ RSpec.describe ActAsApiClient do
     expect([gh1.options[:token], gh2.options[:token]]).to eq(%w[token1 token2])
   end
 
-  context 'GithubClient' do
-    it 'responds to all http methods' do
+  context "GithubClient" do
+    it "responds to all http methods" do
       class GithubClient < ApiClient
         act_as_api_client for: :github, with: { token: "token1" }
       end
