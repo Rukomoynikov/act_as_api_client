@@ -38,4 +38,19 @@ RSpec.describe ActAsApiClient do
 
     expect { GithubClient.new.find }.to_not raise_error
   end
+
+  it "doesn't affect options from another instances" do
+    class GithubClient < ApiClient
+      act_as_api_client for: :github, with: { token: "token1" }
+    end
+
+    class GithubClient2 < ApiClient
+      act_as_api_client for: :github, with: { token: "token2" }
+    end
+
+    gh1 = GithubClient.new
+    gh2 = GithubClient2.new
+
+    expect([gh1.options[:token], gh2.options[:token]]).to eq(%w[token1 token2])
+  end
 end
