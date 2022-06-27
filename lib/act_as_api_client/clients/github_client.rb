@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-
-require "httparty"
+require_relative 'http_client'
 
 module ActAsApiClient
   module Clients
     module GithubClient
+      include HttpClient
       def find
         "find"
       end

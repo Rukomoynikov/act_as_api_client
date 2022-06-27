@@ -8,15 +8,22 @@ module ActAsApiClient
 
   module ClassMethods
     def act_as_api_client(**args)
-      client_for = args.fetch(:for, nil)
+      set_general_client(client_for: args.fetch(:for, nil))
+      set_options(options: args.fetch(:with, {}))
+    end
 
+    private
+
+    def set_general_client(client_for:)
       unless client_for.nil?
         require(File.expand_path("act_as_api_client/clients/#{client_for}_client",
                                  File.dirname(__FILE__)))
         include const_get("ActAsApiClient::Clients::#{client_for.capitalize}Client")
       end
+    end
 
-      define_method("options") { args.fetch(:with, {}) }
+    def set_options(options:)
+      define_method("options") { options }
     end
   end
 
