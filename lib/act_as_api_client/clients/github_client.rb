@@ -7,7 +7,9 @@ module ActAsApiClient
     module GithubClient
       include HttpClient
       def find
-        "find"
+        get('https://api.github.com/repositories', {
+          headers: { 'Content-Type' => 'application/json', 'Accept' => 'application/json' }
+        })
       end
 
       def where

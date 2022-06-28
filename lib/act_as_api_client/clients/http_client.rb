@@ -5,8 +5,8 @@ require "httparty"
 module ActAsApiClient
   module Clients
     module HttpClient
-      def get
-        HTTParty.get
+      def get(url, options = {})
+        HTTParty.get(url, options).parsed_response
       end
 
       def post
