@@ -12,3 +12,4 @@
 
 .idea
 .byebug_history
+spec/credentials.yml
