@@ -36,7 +36,7 @@ RSpec.describe ActAsApiClient do
       act_as_api_client for: :github
     end
 
-    expect { GithubClient.new.find }.to_not raise_error
+    expect { GithubClient.new.find('rukomoynikov/tabled') }.not_to raise_error
   end
 
   it "doesn't affect options from another instances" do
