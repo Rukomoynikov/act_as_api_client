@@ -1,8 +1,10 @@
-# ActAsApiClient
+# act_as_api_client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/act_as_api_client`. To experiment with that code, run `bin/console` for an interactive prompt.
+How to create api clients for your application? What is a better way to encapsualte interactions with third APIs? My answer is `act_as_api_client`.
 
-TODO: Delete this and the text above, and describe your gem
+Let's assume you have a typical Rails or any ruby application and want to play around with an API, Github for example. See the [Usage](#usage) section to find how to use existing preconfigured API's and encapsulate all logic inside `APIClient` classes.
+
+_At the moment i experiment in order to make api clients behavior very similiar to `ActiveRecord` models, so out of the box most of the clients support these methods: find, where, delete, update, find_by, create, update_   
 
 ## Installation
 
@@ -22,7 +24,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+**1. Folder for clients:**
+Create a folder for examples api_clients inside your `lib` directory.
+
+**2. Create API client class:**
+For example you want to fetch and update Github repositoties, then you class may have a form like this:
+
+```ruby
+class GithubClient < ApiClient
+  act_as_api_client for: :github
+end
+```
+
+In case you want to provide and use auth token for Github: 
+
+```ruby
+class GithubClient < ApiClient
+  act_as_api_client for: :github,
+                    with: {
+                      token: <your_token>
+                    }
+end
+```
+
+btw, all values from `with` hash will be availabe in tour clients as instance variable `@options`   
+
+## List of supported api clients
+1. [Github Repositories](https://docs.github.com/en/rest/repos/repos)
 
 ## Development
 
