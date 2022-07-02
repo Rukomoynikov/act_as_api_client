@@ -31,7 +31,7 @@ RSpec.describe ActAsApiClient do
     end.to raise_error(LoadError)
   end
 
-  it "calls method from inherited class option 'for' is provided" do
+  it "calls method from inherited class option 'for' is provided", :vcr do
     class GithubClient < ApiClient
       act_as_api_client for: :github
     end
