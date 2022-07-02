@@ -3,10 +3,10 @@
 require_relative "act_as_api_client/version"
 require_relative "act_as_api_client/base_api_methods"
 
-module ActAsApiClient
-  include BaseApiMethods
+class ApiClient
+  include ActAsApiClient::BaseApiMethods
 
-  module ClassMethods
+  class << self
     def act_as_api_client(**args)
       set_general_client(client_for: args.fetch(:for, nil))
       set_options(options: args.fetch(:with, {}))
@@ -26,12 +26,4 @@ module ActAsApiClient
       define_method("options") { options }
     end
   end
-
-  def self.included(base)
-    base.extend(ClassMethods)
-  end
-end
-
-class ApiClient
-  include ActAsApiClient
 end
