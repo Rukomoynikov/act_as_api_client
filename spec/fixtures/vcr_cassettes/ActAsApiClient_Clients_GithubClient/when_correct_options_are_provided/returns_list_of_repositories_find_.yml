@@ -11,6 +11,8 @@ http_interactions:
       - application/json
       Accept:
       - application/vnd.github.v3+json
+      Authorization:
+      - token <GITHUB_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       User-Agent:
@@ -23,19 +25,40 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sat, 02 Jul 2022 09:20:27 GMT
+      - Mon, 04 Jul 2022 13:22:28 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
       Cache-Control:
-      - public, max-age=60, s-maxage=60
+      - private, max-age=60, s-maxage=60
       Vary:
-      - Accept, Accept-Encoding, Accept, X-Requested-With
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
       Etag:
-      - W/"e6f4002ba3a27bf0db33a4f62b71f0e96e1d826a8372a6c1cedf8425bc63e2db"
+      - W/"4d3c994d95eba19d6a02cad0b8b29d8cf528e4604d1028133b998dd12a6af6f1"
       Last-Modified:
-      - Mon, 27 Jun 2022 11:42:01 GMT
+      - Sat, 02 Jul 2022 19:49:13 GMT
+      X-Oauth-Scopes:
+      - admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+        admin:repo_hook, delete:packages, delete_repo, gist, notifications, project,
+        repo, user, workflow, write:discussion, write:packages
+      X-Accepted-Oauth-Scopes:
+      - repo
+      Github-Authentication-Token-Expiration:
+      - 2022-09-26 11:24:36 UTC
       X-Github-Media-Type:
       - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1656944401'
+      X-Ratelimit-Used:
+      - '2'
+      X-Ratelimit-Resource:
+      - core
       Access-Control-Expose-Headers:
       - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
         X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
@@ -55,26 +78,12 @@ http_interactions:
       - origin-when-cross-origin, strict-origin-when-cross-origin
       Content-Security-Policy:
       - default-src 'none'
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '53'
-      X-Ratelimit-Reset:
-      - '1656756250'
-      X-Ratelimit-Resource:
-      - core
-      X-Ratelimit-Used:
-      - '7'
-      Accept-Ranges:
-      - bytes
-      Content-Length:
-      - '1304'
       X-Github-Request-Id:
-      - FC8E:6416:0F7E:1037:62C00DDB
+      - C547:C5F5:6C40B2:72D24F:62C2E993
     body:
       encoding: ASCII-8BIT
       string: '{"id":489925505,"node_id":"R_kgDOHTOrgQ","name":"tabled","full_name":"Rukomoynikov/tabled","private":false,"owner":{"login":"Rukomoynikov","id":294399,"node_id":"MDQ6VXNlcjI5NDM5OQ==","avatar_url":"https://avatars.githubusercontent.com/u/294399?v=4","gravatar_id":"","url":"https://api.github.com/users/Rukomoynikov","html_url":"https://github.com/Rukomoynikov","followers_url":"https://api.github.com/users/Rukomoynikov/followers","following_url":"https://api.github.com/users/Rukomoynikov/following{/other_user}","gists_url":"https://api.github.com/users/Rukomoynikov/gists{/gist_id}","starred_url":"https://api.github.com/users/Rukomoynikov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Rukomoynikov/subscriptions","organizations_url":"https://api.github.com/users/Rukomoynikov/orgs","repos_url":"https://api.github.com/users/Rukomoynikov/repos","events_url":"https://api.github.com/users/Rukomoynikov/events{/privacy}","received_events_url":"https://api.github.com/users/Rukomoynikov/received_events","type":"User","site_admin":false},"html_url":"https://github.com/Rukomoynikov/tabled","description":"Library
         can be used to render your data to the console. Though it''s quite simple
-        and has no dependencies but powerful.","fork":false,"url":"https://api.github.com/repos/Rukomoynikov/tabled","forks_url":"https://api.github.com/repos/Rukomoynikov/tabled/forks","keys_url":"https://api.github.com/repos/Rukomoynikov/tabled/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Rukomoynikov/tabled/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Rukomoynikov/tabled/teams","hooks_url":"https://api.github.com/repos/Rukomoynikov/tabled/hooks","issue_events_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues/events{/number}","events_url":"https://api.github.com/repos/Rukomoynikov/tabled/events","assignees_url":"https://api.github.com/repos/Rukomoynikov/tabled/assignees{/user}","branches_url":"https://api.github.com/repos/Rukomoynikov/tabled/branches{/branch}","tags_url":"https://api.github.com/repos/Rukomoynikov/tabled/tags","blobs_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/refs{/sha}","trees_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Rukomoynikov/tabled/statuses/{sha}","languages_url":"https://api.github.com/repos/Rukomoynikov/tabled/languages","stargazers_url":"https://api.github.com/repos/Rukomoynikov/tabled/stargazers","contributors_url":"https://api.github.com/repos/Rukomoynikov/tabled/contributors","subscribers_url":"https://api.github.com/repos/Rukomoynikov/tabled/subscribers","subscription_url":"https://api.github.com/repos/Rukomoynikov/tabled/subscription","commits_url":"https://api.github.com/repos/Rukomoynikov/tabled/commits{/sha}","git_commits_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/commits{/sha}","comments_url":"https://api.github.com/repos/Rukomoynikov/tabled/comments{/number}","issue_comment_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues/comments{/number}","contents_url":"https://api.github.com/repos/Rukomoynikov/tabled/contents/{+path}","compare_url":"https://api.github.com/repos/Rukomoynikov/tabled/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Rukomoynikov/tabled/merges","archive_url":"https://api.github.com/repos/Rukomoynikov/tabled/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Rukomoynikov/tabled/downloads","issues_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues{/number}","pulls_url":"https://api.github.com/repos/Rukomoynikov/tabled/pulls{/number}","milestones_url":"https://api.github.com/repos/Rukomoynikov/tabled/milestones{/number}","notifications_url":"https://api.github.com/repos/Rukomoynikov/tabled/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Rukomoynikov/tabled/labels{/name}","releases_url":"https://api.github.com/repos/Rukomoynikov/tabled/releases{/id}","deployments_url":"https://api.github.com/repos/Rukomoynikov/tabled/deployments","created_at":"2022-05-08T11:34:53Z","updated_at":"2022-06-27T11:42:01Z","pushed_at":"2022-06-26T09:03:33Z","git_url":"git://github.com/Rukomoynikov/tabled.git","ssh_url":"git@github.com:Rukomoynikov/tabled.git","clone_url":"https://github.com/Rukomoynikov/tabled.git","svn_url":"https://github.com/Rukomoynikov/tabled","homepage":"","size":23,"stargazers_count":5,"watchers_count":5,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":3,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":3,"watchers":5,"default_branch":"main","temp_clone_token":null,"network_count":0,"subscribers_count":1}'
-  recorded_at: Sat, 02 Jul 2022 09:20:27 GMT
+        and has no dependencies but powerful.","fork":false,"url":"https://api.github.com/repos/Rukomoynikov/tabled","forks_url":"https://api.github.com/repos/Rukomoynikov/tabled/forks","keys_url":"https://api.github.com/repos/Rukomoynikov/tabled/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Rukomoynikov/tabled/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Rukomoynikov/tabled/teams","hooks_url":"https://api.github.com/repos/Rukomoynikov/tabled/hooks","issue_events_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues/events{/number}","events_url":"https://api.github.com/repos/Rukomoynikov/tabled/events","assignees_url":"https://api.github.com/repos/Rukomoynikov/tabled/assignees{/user}","branches_url":"https://api.github.com/repos/Rukomoynikov/tabled/branches{/branch}","tags_url":"https://api.github.com/repos/Rukomoynikov/tabled/tags","blobs_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/refs{/sha}","trees_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Rukomoynikov/tabled/statuses/{sha}","languages_url":"https://api.github.com/repos/Rukomoynikov/tabled/languages","stargazers_url":"https://api.github.com/repos/Rukomoynikov/tabled/stargazers","contributors_url":"https://api.github.com/repos/Rukomoynikov/tabled/contributors","subscribers_url":"https://api.github.com/repos/Rukomoynikov/tabled/subscribers","subscription_url":"https://api.github.com/repos/Rukomoynikov/tabled/subscription","commits_url":"https://api.github.com/repos/Rukomoynikov/tabled/commits{/sha}","git_commits_url":"https://api.github.com/repos/Rukomoynikov/tabled/git/commits{/sha}","comments_url":"https://api.github.com/repos/Rukomoynikov/tabled/comments{/number}","issue_comment_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues/comments{/number}","contents_url":"https://api.github.com/repos/Rukomoynikov/tabled/contents/{+path}","compare_url":"https://api.github.com/repos/Rukomoynikov/tabled/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Rukomoynikov/tabled/merges","archive_url":"https://api.github.com/repos/Rukomoynikov/tabled/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Rukomoynikov/tabled/downloads","issues_url":"https://api.github.com/repos/Rukomoynikov/tabled/issues{/number}","pulls_url":"https://api.github.com/repos/Rukomoynikov/tabled/pulls{/number}","milestones_url":"https://api.github.com/repos/Rukomoynikov/tabled/milestones{/number}","notifications_url":"https://api.github.com/repos/Rukomoynikov/tabled/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Rukomoynikov/tabled/labels{/name}","releases_url":"https://api.github.com/repos/Rukomoynikov/tabled/releases{/id}","deployments_url":"https://api.github.com/repos/Rukomoynikov/tabled/deployments","created_at":"2022-05-08T11:34:53Z","updated_at":"2022-07-02T19:49:13Z","pushed_at":"2022-06-26T09:03:33Z","git_url":"git://github.com/Rukomoynikov/tabled.git","ssh_url":"git@github.com:Rukomoynikov/tabled.git","clone_url":"https://github.com/Rukomoynikov/tabled.git","svn_url":"https://github.com/Rukomoynikov/tabled","homepage":"","size":23,"stargazers_count":6,"watchers_count":6,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":3,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"public","forks":0,"open_issues":3,"watchers":6,"default_branch":"main","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"network_count":0,"subscribers_count":1}'
+  recorded_at: Mon, 04 Jul 2022 13:22:28 GMT
 recorded_with: VCR 6.1.0
