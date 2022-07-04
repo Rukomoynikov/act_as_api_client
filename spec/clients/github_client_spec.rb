@@ -17,7 +17,7 @@ RSpec.describe ActAsApiClient::Clients::GithubClient do
 
   context "when correct options are provided", :vcr do
     it "returns list of repositories (#find)" do
-      expect(github_client.find('Rukomoynikov/tabled')).to include({"full_name"=>"Rukomoynikov/tabled"})
+      expect(github_client.find("Rukomoynikov/tabled")).to include({ "full_name" => "Rukomoynikov/tabled" })
     end
   end
 end

@@ -43,5 +43,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Copy credentials file for CI
+        run: mv spec/credentials.example.yml spec/credentials.yml
       - name: Run tests
         run: bundle exec rspec
