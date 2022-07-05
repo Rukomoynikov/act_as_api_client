@@ -47,7 +47,13 @@ class GithubClient < ApiClient
 end
 ```
 
-btw, all values from `with` hash will be availabe in tour clients as instance variable `@options`   
+btw, all values from `with` hash will be availabe in tour clients as `options`   
+
+**3. Use it:**
+
+```ruby
+GithubClient.new.find('owner_of_repo/repo')
+```
 
 ## List of supported api clients
 1. [Github Repositories](https://docs.github.com/en/rest/repos/repos)
