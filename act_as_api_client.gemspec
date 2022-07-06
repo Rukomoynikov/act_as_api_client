@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["rukomoynikov@gmail.com"]
 
   spec.summary       = "Collection of predefined API clients"
-  spec.description   = "Helps you to build reliable API clients in a minute. Just add act_as_api_client to your classes."
+  spec.description   = "Helps you to build reliable API clients in a minute. Just add act_as_api_client to your classes"
   spec.homepage      = "https://rubygems.org/gems/act_as_api_client"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/Rukomoynikov/act_as_api_client"
