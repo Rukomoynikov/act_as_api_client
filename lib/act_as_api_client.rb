@@ -15,11 +15,11 @@ class ApiClient
     private
 
     def set_general_client(client_for:)
-      unless client_for.nil?
-        require(File.expand_path("act_as_api_client/clients/#{client_for}_client",
-                                 File.dirname(__FILE__)))
-        include const_get("ActAsApiClient::Clients::#{client_for.capitalize}Client")
-      end
+      return if client_for.nil?
+
+      require(File.expand_path("act_as_api_client/clients/#{client_for}_client",
+                               File.dirname(__FILE__)))
+      include const_get("ActAsApiClient::Clients::#{client_for.capitalize}Client")
     end
 
     def set_options(options:)
