@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "act_as_api_client"
-
 RSpec.describe ActAsApiClient do
   context "with general methods" do
     it "has a version number" do

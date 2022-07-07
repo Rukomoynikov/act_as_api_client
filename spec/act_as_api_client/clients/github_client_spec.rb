@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "act_as_api_client/clients/github_client"
-require "act_as_api_client"
 
 RSpec.describe ActAsApiClient::Clients::GithubClient do
   let(:github_client_class) do
