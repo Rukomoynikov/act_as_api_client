@@ -12,11 +12,11 @@ module ActAsApiClient
           raise StandardError, "repository_name parameter is not valid"
         end
 
-        HTTParty.get("https://api.github.com/repos/#{repository_name}",
-                     headers: { "Content-Type" => "application/json",
-                                "Accept" => "application/vnd.github.v3+json",
-                                "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
-                .parsed_response
+        get("https://api.github.com/repos/#{repository_name}",
+            headers: { "Content-Type" => "application/json",
+                       "Accept" => "application/vnd.github.v3+json",
+                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
+          .parsed_response
       end
 
       def where

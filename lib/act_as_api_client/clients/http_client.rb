@@ -6,7 +6,7 @@ module ActAsApiClient
   module Clients
     module HttpClient
       def get(url, options = {})
-        HTTParty.get(url, options).parsed_response
+        HTTParty.get(url, options)
       end
 
       def post
