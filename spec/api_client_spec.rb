@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "act_as_api_client"
-
 RSpec.describe ApiClient do
   context "with provided options" do
     let(:github_client_class) do
