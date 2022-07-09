@@ -20,11 +20,25 @@ module ActAsApiClient
         "where"
       end
 
-      def find_by(_options = {})
-        # by_organization https://docs.github.com/en/rest/repos/repos#list-organization-repositories
-        # by_user https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user
-        # by_authenticated_user https://docs.github.com/en/rest/repos/repos#list-repositories-for-the-authenticated-user
-        "find_by"
+      def find_by(options = {})
+        unless options.is_a?(Hash)
+          raise StandardError, "provide a hash as an argument not #{options.class.to_s.downcase}"
+        end
+        raise StandardError, "provide at least one parameter" if options.keys.length.zero?
+        raise StandardError, "method 'find_by' supports only one parameter" if options.keys.length > 1
+
+        url = case options.keys.first
+              when :organization
+                "https://api.github.com/orgs/#{options[:organization]}/repos"
+              when :user
+                "https://api.github.com/users/#{options[:user]}/repos"
+              when :authenticated_user
+                "https://api.github.com/repositories"
+              end
+
+        get(url,
+            headers: { "Accept" => "application/vnd.github.v3+json",
+                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
       end
 
       def delete
