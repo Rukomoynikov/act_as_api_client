@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "http_client"
-require "httparty"
 
 module ActAsApiClient
   module Clients
@@ -13,10 +12,8 @@ module ActAsApiClient
         end
 
         get("https://api.github.com/repos/#{repository_name}",
-            headers: { "Content-Type" => "application/json",
-                       "Accept" => "application/vnd.github.v3+json",
+            headers: { "Accept" => "application/vnd.github.v3+json",
                        "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
-          .parsed_response
       end
 
       def where

@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/Rukomoynikov/heroes-of-markets
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.github.com
+      Authorization:
+      - token <GITHUB_TOKEN>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 09 Jul 2022 14:23:22 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"8c48395bd885694297e003656104849d3b1248b189d9cc1ecd2700450423910d"
+      Last-Modified:
+      - Tue, 18 Feb 2020 10:00:44 GMT
+      X-Oauth-Scopes:
+      - admin:enterprise, admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+        admin:repo_hook, delete:packages, delete_repo, gist, notifications, project,
+        repo, user, workflow, write:discussion, write:packages
+      X-Accepted-Oauth-Scopes:
+      - repo
+      Github-Authentication-Token-Expiration:
+      - 2022-09-26 11:24:36 UTC
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4996'
+      X-Ratelimit-Reset:
+      - '1657379114'
+      X-Ratelimit-Used:
+      - '4'
+      X-Ratelimit-Resource:
+      - core
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - C881:1D1E:3337A4:352299:62C98F5A
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":241198067,"node_id":"MDEwOlJlcG9zaXRvcnkyNDExOTgwNjc=","name":"heroes-of-markets","full_name":"Rukomoynikov/heroes-of-markets","private":true,"owner":{"login":"Rukomoynikov","id":294399,"node_id":"MDQ6VXNlcjI5NDM5OQ==","avatar_url":"https://avatars.githubusercontent.com/u/294399?v=4","gravatar_id":"","url":"https://api.github.com/users/Rukomoynikov","html_url":"https://github.com/Rukomoynikov","followers_url":"https://api.github.com/users/Rukomoynikov/followers","following_url":"https://api.github.com/users/Rukomoynikov/following{/other_user}","gists_url":"https://api.github.com/users/Rukomoynikov/gists{/gist_id}","starred_url":"https://api.github.com/users/Rukomoynikov/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Rukomoynikov/subscriptions","organizations_url":"https://api.github.com/users/Rukomoynikov/orgs","repos_url":"https://api.github.com/users/Rukomoynikov/repos","events_url":"https://api.github.com/users/Rukomoynikov/events{/privacy}","received_events_url":"https://api.github.com/users/Rukomoynikov/received_events","type":"User","site_admin":false},"html_url":"https://github.com/Rukomoynikov/heroes-of-markets","description":null,"fork":false,"url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets","forks_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/forks","keys_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/keys{/key_id}","collaborators_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/teams","hooks_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/hooks","issue_events_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/issues/events{/number}","events_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/events","assignees_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/assignees{/user}","branches_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/branches{/branch}","tags_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/tags","blobs_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/git/refs{/sha}","trees_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/git/trees{/sha}","statuses_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/statuses/{sha}","languages_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/languages","stargazers_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/stargazers","contributors_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/contributors","subscribers_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/subscribers","subscription_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/subscription","commits_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/commits{/sha}","git_commits_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/git/commits{/sha}","comments_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/comments{/number}","issue_comment_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/issues/comments{/number}","contents_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/contents/{+path}","compare_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/compare/{base}...{head}","merges_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/merges","archive_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/downloads","issues_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/issues{/number}","pulls_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/pulls{/number}","milestones_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/milestones{/number}","notifications_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/labels{/name}","releases_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/releases{/id}","deployments_url":"https://api.github.com/repos/Rukomoynikov/heroes-of-markets/deployments","created_at":"2020-02-17T20:10:27Z","updated_at":"2020-02-18T10:00:44Z","pushed_at":"2020-02-18T10:00:49Z","git_url":"git://github.com/Rukomoynikov/heroes-of-markets.git","ssh_url":"git@github.com:Rukomoynikov/heroes-of-markets.git","clone_url":"https://github.com/Rukomoynikov/heroes-of-markets.git","svn_url":"https://github.com/Rukomoynikov/heroes-of-markets","homepage":null,"size":10432,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"allow_forking":true,"is_template":false,"web_commit_signoff_required":false,"topics":[],"visibility":"private","forks":0,"open_issues":0,"watchers":0,"default_branch":"master","permissions":{"admin":true,"maintain":true,"push":true,"triage":true,"pull":true},"temp_clone_token":"AACH375GCHQ2BX3G4WV2QTLCZGIIM","allow_squash_merge":true,"allow_merge_commit":true,"allow_rebase_merge":true,"allow_auto_merge":false,"delete_branch_on_merge":false,"allow_update_branch":false,"use_squash_pr_title_as_default":false,"network_count":0,"subscribers_count":1}'
+  recorded_at: Sat, 09 Jul 2022 14:23:22 GMT
+recorded_with: VCR 6.1.0
