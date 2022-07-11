@@ -16,8 +16,11 @@ module ActAsApiClient
                        "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
       end
 
-      def where
-        "where"
+      def where(query_string, parameters = {})
+        get("https://api.github.com/search/repositories",
+            headers: { "Accept" => "application/vnd.github.v3+json",
+                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) },
+            params: { q: query_string }.merge(parameters))
       end
 
       def find_by(options = {})

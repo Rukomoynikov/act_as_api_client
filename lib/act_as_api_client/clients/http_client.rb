@@ -20,7 +20,7 @@ module ActAsApiClient
         end
 
         case response
-        when Net::HTTPNotFound, Net::HTTPSuccess
+        when Net::HTTPNotFound, Net::HTTPSuccess, Net::HTTPUnprocessableEntity
           JSON.parse(response.body)
         end
       end
