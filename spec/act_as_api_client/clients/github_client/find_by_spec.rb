@@ -13,25 +13,25 @@ RSpec.describe ActAsApiClient::Clients::GithubClient do
   end
 
   describe "#find_by", vcr: true do
-    # context "when options are invalid" do
-    #   it "checks type of argument" do
-    #     expect do
-    #       github_client_class.new.find_by("Rukomoynikovtabled")
-    #     end.to raise_error(StandardError, "provide a hash as an argument not string")
-    #   end
-    #
-    #   it "checks options length to be > 1" do
-    #     expect do
-    #       github_client_class.new.find_by({})
-    #     end.to raise_error(StandardError, "provide at least one parameter")
-    #   end
-    #
-    #   it "checks options length to be < 2" do
-    #     expect do
-    #       github_client_class.new.find_by({a: 1, b: 2})
-    #     end.to raise_error(StandardError, "method 'find_by' supports only one parameter")
-    #   end
-    # end
+    context "when options are invalid" do
+      it "checks type of argument" do
+        expect do
+          github_client_class.new.find_by("Rukomoynikovtabled")
+        end.to raise_error(StandardError, "provide a hash as an argument not string")
+      end
+
+      it "checks options length to be > 1" do
+        expect do
+          github_client_class.new.find_by({})
+        end.to raise_error(StandardError, "provide at least one parameter")
+      end
+
+      it "checks options length to be < 2" do
+        expect do
+          github_client_class.new.find_by({ a: 1, b: 2 })
+        end.to raise_error(StandardError, "method 'find_by' supports only one parameter")
+      end
+    end
 
     context "when options are valid" do
       describe "by_organization" do
@@ -60,7 +60,3 @@ RSpec.describe ActAsApiClient::Clients::GithubClient do
     end
   end
 end
-
-# raise StandardError, "method 'find_by' supports only one parameter" unless options.keys.length > 1
-# raise StandardError, "provide at least one parameter" unless options.keys.length.zero?
-# raise StandardError, "provide hash as a argument not #{options.class}" unless options.is_a?(Hash)
