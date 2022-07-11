@@ -11,7 +11,11 @@ RSpec.describe ActAsApiClient::Clients::HttpClient do
     it "responds to all http methods" do
       methods = %i[get put delete post update]
 
-      expect(github_client_class.new).to respond_to(*methods)
+      methods.each do |method_name|
+        expect(
+          github_client_class.new.method(method_name.to_sym)
+        ).to be_a_kind_of(Method)
+      end
     end
   end
 

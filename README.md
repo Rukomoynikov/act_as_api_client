@@ -2,7 +2,7 @@
 
 How to create api clients for your application? What is a better way to encapsualte interactions with third APIs? My answer is `act_as_api_client`.
 
-Let's assume you have a typical Rails or any ruby application and want to play around with an API, Github for example. See the [Usage](#usage) section to find how to use existing preconfigured API's and encapsulate all logic inside `APIClient` classes.
+Let's assume you have a typical Rails or any ruby application and want to play around with an API, Github for example. See the [Usage](https://github.com/Rukomoynikov/act_as_api_client#usage) section to find how to use existing preconfigured API's and encapsulate all logic inside `APIClient` classes.
 
 _At the moment i experiment in order to make api clients behavior very similiar to `ActiveRecord` models, so out of the box most of the clients support these methods: find, where, delete, update, find_by, create, update_   
 
@@ -24,10 +24,10 @@ Or install it yourself as:
 
 ## Usage
 
-**1. Folder for clients:**
-Create a folder for examples api_clients inside your `lib` directory.
+### Folder for clients:
+Create a folder in your app for examples `api_clients` inside your `lib` directory. This will be the place where you will keep all... api clients.
 
-**2. Create API client class:**
+### Create API client class:
 For example you want to fetch and update Github repositoties, then you class may have a form like this:
 
 ```ruby
@@ -36,7 +36,7 @@ class GithubClient < ApiClient
 end
 ```
 
-In case you want to provide and use auth token for Github: 
+In case you want to provide and use authorization token for Github: 
 
 ```ruby
 class GithubClient < ApiClient
@@ -46,14 +46,17 @@ class GithubClient < ApiClient
                     }
 end
 ```
+btw, all values from `with` hash will be availabe in tour clients as instance variable `@options`
 
-btw, all values from `with` hash will be availabe in tour clients as `options`   
-
-**3. Use it:**
+### Use it:
+Let's fetch all repositories from Rails organization:
 
 ```ruby
-GithubClient.new.find('owner_of_repo/repo')
+github_client = GithubClient.new()
+github_client.find_by(organization: 'rails')
 ```
+
+Voila.
 
 ## List of supported api clients
 1. [Github Repositories](https://docs.github.com/en/rest/repos/repos)
@@ -64,14 +67,6 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/act_as_api_client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/act_as_api_client/blob/master/CODE_OF_CONDUCT.md).
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the ActAsApiClient project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/act_as_api_client/blob/master/CODE_OF_CONDUCT.md).
