@@ -5,6 +5,8 @@ require "net/http"
 module ActAsApiClient
   module Clients
     module HttpClient
+      private
+
       def get(url, options = {})
         # Request part
         uri = URI(url)
@@ -40,8 +42,6 @@ module ActAsApiClient
       def delete
         # HTTParty.delete
       end
-
-      private
 
       def request_headers(headers:, request:)
         headers.each do |key, value|
