@@ -53,13 +53,16 @@ Let's fetch all repositories from Rails organization:
 
 ```ruby
 github_client = GithubClient.new()
+
+github_client.find('Rukomoynikov/tabled')
 github_client.find_by(organization: 'rails')
+github_client.where('rails', per_page: 100)
 ```
 
 Voila.
 
-## List of supported api clients
-1. [Github Repositories](https://docs.github.com/en/rest/repos/repos)
+## List of supported API clients
+1. [Github Repositories](https://rubydoc.info/github/Rukomoynikov/act_as_api_client/ActAsApiClient/Clients/GithubClient)
 
 ## Development
 
