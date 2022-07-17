@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://apitest.authorize.net/rest/v1/webhooks/f8ea19aa-1728-4601-bfe5-8f580456ce89
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - apitest.authorize.net
+      Authorization:
+      - Basic <AUTHORIZE_AUTH_HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Opnet-Transaction-Trace:
+      - efab08ed-42aa-4322-9ad3-ece0d9a75c48-8208-271218
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method, authorization
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - https://developer.authorize.net
+      Access-Control-Max-Age:
+      - '600'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cnection:
+      - close
+      Date:
+      - Wed, 27 Jul 2022 16:20:19 GMT
+      Content-Length:
+      - '380'
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"_links\": {\r\n    \"self\": {\r\n      \"href\": \"/rest/v1/webhooks/f8ea19aa-1728-4601-bfe5-8f580456ce89\"\r\n
+        \   }\r\n  },\r\n  \"webhookId\": \"f8ea19aa-1728-4601-bfe5-8f580456ce89\",\r\n
+        \ \"name\": \"Prepro Bromley FilmApp\",\r\n  \"status\": \"inactive\",\r\n
+        \ \"url\": \"https://prepro1.apply4.com/webhooks/authorize_net/accept\",\r\n
+        \ \"eventTypes\": [\r\n    \"net.authorize.payment.authcapture.created\"\r\n
+        \ ]\r\n}"
+  recorded_at: Wed, 27 Jul 2022 16:20:20 GMT
+recorded_with: VCR 6.1.0
