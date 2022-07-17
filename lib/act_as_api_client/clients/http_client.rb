@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "net/http"
+require "json"
 
 module ActAsApiClient
   module Clients
@@ -23,7 +24,7 @@ module ActAsApiClient
 
         case response
         when Net::HTTPNotFound, Net::HTTPSuccess, Net::HTTPUnprocessableEntity
-          JSON.parse(response.body)
+          ::JSON.parse(response.body)
         end
       end
 
