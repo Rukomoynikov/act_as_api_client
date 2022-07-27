@@ -31,7 +31,7 @@ http_interactions:
       Expires:
       - "-1"
       X-Opnet-Transaction-Trace:
-      - efab08ed-42aa-4322-9ad3-ece0d9a75c48-8208-271218
+      - b620d06f-a8fd-4ac3-97d2-3b2e21bf57ac-4576-342946
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -47,7 +47,7 @@ http_interactions:
       X-Cnection:
       - close
       Date:
-      - Wed, 27 Jul 2022 16:20:19 GMT
+      - Thu, 28 Jul 2022 16:07:11 GMT
       Content-Length:
       - '380'
     body:
@@ -58,5 +58,5 @@ http_interactions:
         \ \"url\": \"https://prepro1.apply4.com/webhooks/authorize_net/accept\",\r\n
         \ \"eventTypes\": [\r\n    \"net.authorize.payment.authcapture.created\"\r\n
         \ ]\r\n}"
-  recorded_at: Wed, 27 Jul 2022 16:20:20 GMT
+  recorded_at: Thu, 28 Jul 2022 16:07:12 GMT
 recorded_with: VCR 6.1.0

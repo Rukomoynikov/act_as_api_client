@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://apitest.authorize.net/rest/v1/notifications/?from_date=2022-07-27
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - apitest.authorize.net
+      Authorization:
+      - Basic <AUTHORIZE_AUTH_HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Opnet-Transaction-Trace:
+      - b620d06f-a8fd-4ac3-97d2-3b2e21bf57ac-4576-342334
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method, authorization
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - https://developer.authorize.net
+      Access-Control-Max-Age:
+      - '600'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cnection:
+      - close
+      Date:
+      - Thu, 28 Jul 2022 15:56:59 GMT
+      Content-Length:
+      - '1036'
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"_links\": {\r\n    \"self\": {\r\n      \"href\": \"/rest/v1/notifications?offset=0&limit=100&from_date=2022-07-27&to_date=2022-07-28\"\r\n
+        \   }\r\n  },\r\n  \"notifications\": [\r\n    {\r\n      \"_links\": {\r\n
+        \       \"self\": {\r\n          \"href\": \"/rest/v1/notifications/1a652bd4-30d8-4124-af83-0722672d1c37\"\r\n
+        \       }\r\n      },\r\n      \"notificationId\": \"1a652bd4-30d8-4124-af83-0722672d1c37\",\r\n
+        \     \"deliveryStatus\": \"RetryPending\",\r\n      \"eventType\": \"net.authorize.payment.authcapture.created\",\r\n
+        \     \"eventDate\": \"2022-07-27T09:51:34.167\",\r\n      \"webhookId\":
+        \"f8ea19aa-1728-4601-bfe5-8f580456ce89\"\r\n    },\r\n    {\r\n      \"_links\":
+        {\r\n        \"self\": {\r\n          \"href\": \"/rest/v1/notifications/a000ee6d-8674-418a-a21f-22d91bfe865e\"\r\n
+        \       }\r\n      },\r\n      \"notificationId\": \"a000ee6d-8674-418a-a21f-22d91bfe865e\",\r\n
+        \     \"deliveryStatus\": \"RetryPending\",\r\n      \"eventType\": \"net.authorize.payment.authcapture.created\",\r\n
+        \     \"eventDate\": \"2022-07-27T13:33:59.863\",\r\n      \"webhookId\":
+        \"f8ea19aa-1728-4601-bfe5-8f580456ce89\"\r\n    }\r\n  ]\r\n}"
+  recorded_at: Thu, 28 Jul 2022 15:57:00 GMT
+recorded_with: VCR 6.1.0

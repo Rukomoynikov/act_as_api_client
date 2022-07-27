@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://apitest.authorize.net/rest/v1/notifications/1a652bd4-30d8-4124-af83-0722672d1c37
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - apitest.authorize.net
+      Authorization:
+      - Basic <AUTHORIZE_AUTH_HEADER>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      X-Opnet-Transaction-Trace:
+      - b620d06f-a8fd-4ac3-97d2-3b2e21bf57ac-4576-342338
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-requested-with,cache-control,content-type,origin,method, authorization
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS,PUT,PATCH,DELETE
+      Access-Control-Allow-Origin:
+      - https://developer.authorize.net
+      Access-Control-Max-Age:
+      - '600'
+      X-Content-Type-Options:
+      - nosniff
+      X-Cnection:
+      - close
+      Date:
+      - Thu, 28 Jul 2022 15:57:01 GMT
+      Content-Length:
+      - '2322'
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"_links\": {\r\n    \"self\": {\r\n      \"href\": \"/rest/v1/notifications/1a652bd4-30d8-4124-af83-0722672d1c37\"\r\n
+        \   }\r\n  },\r\n  \"notificationId\": \"1a652bd4-30d8-4124-af83-0722672d1c37\",\r\n
+        \ \"deliveryStatus\": \"RetryPending\",\r\n  \"eventType\": \"net.authorize.payment.authcapture.created\",\r\n
+        \ \"eventDate\": \"2022-07-27T09:51:34.167\",\r\n  \"webhookId\": \"f8ea19aa-1728-4601-bfe5-8f580456ce89\",\r\n
+        \ \"retryLog\": {\r\n    \"logs\": [\r\n      {\r\n        \"statusCode\":
+        500,\r\n        \"retryStage\": 1,\r\n        \"retryCountInStage\": 1,\r\n
+        \       \"retryDate\": \"2022-07-27T09:55:07.307\",\r\n        \"message\":
+        \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      },\r\n      {\r\n        \"statusCode\": 500,\r\n        \"retryStage\":
+        1,\r\n        \"retryCountInStage\": 2,\r\n        \"retryDate\": \"2022-07-27T09:57:20.477\",\r\n
+        \       \"message\": \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      },\r\n      {\r\n        \"statusCode\": 500,\r\n        \"retryStage\":
+        1,\r\n        \"retryCountInStage\": 3,\r\n        \"retryDate\": \"2022-07-27T10:00:28.47\",\r\n
+        \       \"message\": \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      },\r\n      {\r\n        \"statusCode\": 500,\r\n        \"retryStage\":
+        2,\r\n        \"retryCountInStage\": 1,\r\n        \"retryDate\": \"2022-07-27T18:00:49.03\",\r\n
+        \       \"message\": \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      },\r\n      {\r\n        \"statusCode\": 500,\r\n        \"retryStage\":
+        2,\r\n        \"retryCountInStage\": 2,\r\n        \"retryDate\": \"2022-07-28T01:24:49.443\",\r\n
+        \       \"message\": \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      },\r\n      {\r\n        \"statusCode\": 500,\r\n        \"retryStage\":
+        2,\r\n        \"retryCountInStage\": 3,\r\n        \"retryDate\": \"2022-07-28T09:24:10.877\",\r\n
+        \       \"message\": \"Error occured in connecting to the endpoint: https://ultrahook.com/webhooks/authorize_net/accept.
+        \"\r\n      }\r\n    ]\r\n  },\r\n  \"payload\": {\r\n    \"responseCode\":
+        1,\r\n    \"authCode\": \"000000\",\r\n    \"avsResponse\": \"Y\",\r\n    \"authAmount\":
+        30.00,\r\n    \"invoiceNumber\": \"1588\",\r\n    \"entityName\": \"transaction\",\r\n
+        \   \"id\": \"40099138645\"\r\n  }\r\n}"
+  recorded_at: Thu, 28 Jul 2022 15:57:01 GMT
+recorded_with: VCR 6.1.0
