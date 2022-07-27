@@ -10,7 +10,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/vnd.github.v3+json
       User-Agent:
       - Ruby
       Host:
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sat, 09 Jul 2022 14:23:21 GMT
+      - Thu, 28 Jul 2022 15:57:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -43,11 +43,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4998'
+      - '4999'
       X-Ratelimit-Reset:
-      - '1657379114'
+      - '1659027423'
       X-Ratelimit-Used:
-      - '2'
+      - '1'
       X-Ratelimit-Resource:
       - core
       Access-Control-Expose-Headers:
@@ -72,9 +72,9 @@ http_interactions:
       Vary:
       - Accept-Encoding, Accept, X-Requested-With
       X-Github-Request-Id:
-      - C87F:4ED5:393D8E:3B2C48:62C98F59
+      - C1B6:11EE:1F890E7:208AC43:62E2B1CF
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Not Found","documentation_url":"https://docs.github.com/rest/reference/repos#get-a-repository"}'
-  recorded_at: Sat, 09 Jul 2022 14:23:21 GMT
+  recorded_at: Thu, 28 Jul 2022 15:57:03 GMT
 recorded_with: VCR 6.1.0
