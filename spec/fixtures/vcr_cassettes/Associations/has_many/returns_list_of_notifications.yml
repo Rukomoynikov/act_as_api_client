@@ -31,7 +31,7 @@ http_interactions:
       Expires:
       - "-1"
       X-Opnet-Transaction-Trace:
-      - b620d06f-a8fd-4ac3-97d2-3b2e21bf57ac-4576-342946
+      - 752e83bd-fb9d-43de-9666-a0cba6aea456-12436-20467
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -47,7 +47,7 @@ http_interactions:
       X-Cnection:
       - close
       Date:
-      - Thu, 28 Jul 2022 16:07:11 GMT
+      - Sat, 30 Jul 2022 19:10:41 GMT
       Content-Length:
       - '380'
     body:
@@ -58,5 +58,5 @@ http_interactions:
         \ \"url\": \"https://ultrahook.com/webhooks/authorize_net/accept\",\r\n
         \ \"eventTypes\": [\r\n    \"net.authorize.payment.authcapture.created\"\r\n
         \ ]\r\n}"
-  recorded_at: Thu, 28 Jul 2022 16:07:12 GMT
+  recorded_at: Sat, 30 Jul 2022 19:10:43 GMT
 recorded_with: VCR 6.1.0
