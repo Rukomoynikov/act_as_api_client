@@ -20,6 +20,8 @@ module ActAsApiClient
 
         get("https://#{base_uri}/rest/v1/webhooks/#{uuid}",
             headers: { "Authorization" => auth })
+
+        Struct()
       end
 
       private

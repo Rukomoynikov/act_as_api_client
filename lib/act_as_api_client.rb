@@ -2,9 +2,11 @@
 
 require_relative "act_as_api_client/version"
 require_relative "act_as_api_client/base_api_methods"
+require_relative "act_as_api_client/associations"
 
 class ApiClient
   include ActAsApiClient::BaseApiMethods
+  extend ActAsApiClient::Associations
 
   class << self
     def act_as_api_client(**args)
@@ -24,6 +26,10 @@ class ApiClient
       include const_get("ActAsApiClient::Clients::#{class_name}Client")
     end
 
+    # Method to access all params that were given through
+    # act_as_api_client: for: {}. Method is read only.
+    #
+    # @param options [Hash] hash with parameters, usually used for providing auth tokens
     def set_options(options:)
       define_method("options") { options }
     end
