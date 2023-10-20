@@ -4,7 +4,7 @@ require_relative "http_client"
 
 module ActAsApiClient
   module Clients
-    module GithubClient
+    module GithubRepositoriesClient
       include HttpClient
 
       # Searches Github for one repository by it's owner and repository names.
