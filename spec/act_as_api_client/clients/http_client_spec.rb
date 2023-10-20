@@ -3,11 +3,11 @@
 RSpec.describe ActAsApiClient::Clients::HttpClient do
   let(:github_client_class) do
     Class.new(ApiClient) do
-      act_as_api_client for: :github, with: { token: "token1" }
+      act_as_api_client for: :github_repositories, with: { token: "token1" }
     end
   end
 
-  context "when GithubClient" do
+  context "when GithubRepositoriesClient" do
     it "responds to all http methods" do
       methods = %i[get put delete post update]
 

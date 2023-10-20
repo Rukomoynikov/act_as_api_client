@@ -4,13 +4,13 @@ RSpec.describe ApiClient do
   context "with provided options" do
     let(:github_client_class) do
       Class.new(ApiClient) do
-        act_as_api_client for: :github, with: { token: "token1" }
+        act_as_api_client for: :github_repositories, with: { token: "token1" }
       end
     end
 
     let(:github_client_class_2) do
       Class.new(ApiClient) do
-        act_as_api_client for: :github, with: { token: "token2" }
+        act_as_api_client for: :github_repositories, with: { token: "token2" }
       end
     end
 
