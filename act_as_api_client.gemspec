@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/act_as_api_client/version"
-
 Gem::Specification.new do |spec|
   spec.name          = "act_as_api_client"
-  spec.version       = ActAsApiClient::VERSION
+  spec.version       = "0.2.0"
   spec.authors       = ["Max Rukomoynikov"]
   spec.email         = ["rukomoynikov@gmail.com"]
 
