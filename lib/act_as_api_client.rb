@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "act_as_api_client/version"
 require_relative "act_as_api_client/base_api_methods"
 
 class ApiClient

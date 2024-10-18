@@ -2,10 +2,6 @@
 
 RSpec.describe ActAsApiClient do
   context "with general methods" do
-    it "has a version number" do
-      expect(ActAsApiClient::VERSION).not_to be nil
-    end
-
     it "doesn't add any method to general Object class" do
       expect(Object.new).not_to respond_to(:find)
     end
