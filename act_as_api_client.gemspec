@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Helps you to build reliable API clients in a minute. Just add act_as_api_client to your classes"
   spec.homepage      = "https://rubygems.org/gems/act_as_api_client"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.6.0")
 
   spec.metadata = {
     "source_code_uri" => "https://github.com/Rukomoynikov/act_as_api_client",
