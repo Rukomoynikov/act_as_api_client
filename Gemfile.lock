@@ -69,6 +69,3 @@ DEPENDENCIES
   rubocop-rspec
   vcr (~> 6.1)
   webmock (~> 3.14)
-
-BUNDLED WITH
-   2.2.3

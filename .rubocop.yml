@@ -16,7 +16,7 @@ Layout/LineLength:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.6
 
 Style/Documentation:
   Enabled: false

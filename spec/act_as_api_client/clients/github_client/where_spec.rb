@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require "act_as_api_client/clients/github_client"
+require "act_as_api_client/clients/github_repositories_client"
 
-RSpec.describe ActAsApiClient::Clients::GithubClient do
+RSpec.describe ActAsApiClient::Clients::GithubRepositoriesClient do
   let(:github_client_class) do
     Class.new(ApiClient) do
-      act_as_api_client for: :github,
+      act_as_api_client for: :github_repositories,
                         with: {
                           token: YAML.load_file("spec/credentials.yml").dig("github", "token")
                         }
