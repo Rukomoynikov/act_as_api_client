@@ -27,6 +27,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
+  spec.add_development_dependency "byebug", "~> 11.1"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.80"
+  spec.add_development_dependency "rubocop-rspec"
+  spec.add_development_dependency "vcr", "~> 6.1"
+  spec.add_development_dependency "webmock", "~> 3.14"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
