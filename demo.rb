@@ -3,7 +3,7 @@
 require_relative "lib/act_as_api_client"
 
 class GithubClient < ApiClient
-  act_as_api_client for: :github
+  act_as_api_client for: :github_repositories
 end
 
 p GithubClient.ancestors
