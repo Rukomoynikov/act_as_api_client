@@ -30,7 +30,7 @@ module ActAsApiClient
       #
       # @example Reverse a string
       #   class GithubClient < ApiClient
-      #     act_as_api_client for: :github
+      #     act_as_api_client for: :github_repositories
       #   end
       #
       #   GithubClient.new.where('rails')
@@ -50,7 +50,7 @@ module ActAsApiClient
       #
       # @example Reverse a string
       #   class GithubClient < ApiClient
-      #     act_as_api_client for: :github
+      #     act_as_api_client for: :github_repositories
       #   end
       #
       #   GithubClient.new.find_by(organization: 'rails')

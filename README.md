@@ -1,10 +1,8 @@
 # act_as_api_client
 
-How to create api clients for your application? What is a better way to encapsualte interactions with third APIs? My answer is `act_as_api_client`.
+How to create api clients for your application? What is a better way to encapsualte interactions with third party APIs? My answer is `act_as_api_client`.
 
 Let's assume you have a typical Rails or any ruby application and want to play around with an API, Github for example. See the [Usage](https://github.com/Rukomoynikov/act_as_api_client#usage) section to find how to use existing preconfigured API's and encapsulate all logic inside `APIClient` classes.
-
-_At the moment i experiment in order to make api clients behavior very similiar to `ActiveRecord` models, so out of the box most of the clients support these methods: find, where, delete, update, find_by, create, update_   
 
 ## Installation
 
@@ -25,14 +23,14 @@ Or install it yourself as:
 ## Usage
 
 ### Folder for clients:
-Create a folder in your app for examples `api_clients` inside your `lib` directory. This will be the place where you will keep all... api clients.
+Create a folder in your app for examples `api_clients`. This will be the place where you will keep all servies responsible for communication with external HTTP APIs.
 
 ### Create API client class:
-For example you want to fetch and update Github repositoties, then you class may have a form like this:
+For example, you need to fetch and update Github repositories, then you class may have a form like this:
 
 ```ruby
 class GithubClient < ApiClient
-  act_as_api_client for: :github
+  act_as_api_client for: :github_repositories
 end
 ```
 
@@ -40,9 +38,9 @@ In case you want to provide and use authorization token for Github:
 
 ```ruby
 class GithubClient < ApiClient
-  act_as_api_client for: :github,
+  act_as_api_client for: :github_repositories,
                     with: {
-                      token: <your_token>
+                      token: <your_token> # ENV variable of secret
                     }
 end
 ```
