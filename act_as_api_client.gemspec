@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "act_as_api_client"
-  spec.version       = "1.0.0"
+  spec.version       = "1.2.2"
   spec.authors       = ["Max Rukomoynikov"]
   spec.email         = ["rukomoynikov@gmail.com"]
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    act_as_api_client (1.0.0)
+    act_as_api_client (1.2.2)
 
 GEM
   remote: https://rubygems.org/
