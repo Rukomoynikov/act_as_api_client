@@ -13,6 +13,22 @@ module ActAsApiClient
 
         include HttpClient
 
+        # Sends request to Anthropic API https://docs.anthropic.com/en/api/messages
+        #
+        # @param model [String] The model that will complete your prompt
+        # @param messages [Array] Input messages
+        # @param max_tokens [Integer] The maximum number of tokens to generate before stopping
+        # @param metadata [Hash] An object describing metadata about the request
+        # @param stop_sequences [Array<String>] Custom text sequences that will cause the model to stop generating
+        # @param stream [Boolean] Whether to incrementally stream the response using server-sent events
+        # @param system [String] System prompt
+        # @param temperature [Float] Amount of randomness injected into the response
+        # @param tool_choice [Hash] How the model should use the provided tools
+        # @param tools [Array<Hash>] Definitions of tools that the model may use
+        # @param top_k [Integer] Only sample from the top K options for each subsequent token
+        # @param top_p [Float] Use nucleus sampling
+        #
+        # @return [Hash] Response from Anthropic API
         def create(**params)
           post(BASE_URL, headers: headers, body: body(**params))
         end
