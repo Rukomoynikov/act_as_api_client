@@ -21,7 +21,7 @@ RSpec.describe ActAsApiClient do
     it "throws exception if api client file doesn't exist" do
       expect do
         wrong_client_class
-      end.to raise_error(LoadError)
+      end.to raise_error(ActAsApiClient::Errors::NonExistingClient)
     end
   end
 end
