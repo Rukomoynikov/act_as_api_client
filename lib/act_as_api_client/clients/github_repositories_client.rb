@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative "http_client"
+require "act_as_api_client/clients/http/simple_client"
 
 module ActAsApiClient
   module Clients
     module GithubRepositoriesClient
-      include HttpClient
+      include ActAsApiClient::Clients::Http::SimpleClient
 
       # Searches Github for one repository by it's owner and repository names.
       # More details look at the corresponding {https://docs.github.com/en/rest/repos/repos#get-a-repository Github Docs page}
@@ -76,19 +76,6 @@ module ActAsApiClient
             headers: { "Accept" => "application/vnd.github.v3+json",
                        "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
       end
-
-      # def delete
-      #   # Call only on queried before repository and repository is not 404/400 and has right to delete (write)
-      #   "delete"
-      # end
-      #
-      # def create
-      #   "create"
-      # end
-      #
-      # def update
-      #   "update"
-      # end
     end
   end
 end

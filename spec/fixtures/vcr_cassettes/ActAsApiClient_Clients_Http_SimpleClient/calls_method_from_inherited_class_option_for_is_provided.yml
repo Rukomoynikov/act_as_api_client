@@ -17,19 +17,18 @@ http_interactions:
       - api.github.com
       Authorization:
       - token token1
+      X-Api-Key: "<X-Api-Key>"
   response:
     status:
       code: 401
       message: Unauthorized
     headers:
-      Server:
-      - GitHub.com
       Date:
-      - Thu, 28 Jul 2022 15:57:09 GMT
+      - Fri, 22 Nov 2024 21:21:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '80'
+      - '95'
       X-Github-Media-Type:
       - github.v3; format=json
       X-Ratelimit-Limit:
@@ -37,7 +36,7 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '59'
       X-Ratelimit-Reset:
-      - '1659027429'
+      - '1732314061'
       X-Ratelimit-Used:
       - '1'
       X-Ratelimit-Resource:
@@ -63,10 +62,12 @@ http_interactions:
       - default-src 'none'
       Vary:
       - Accept-Encoding, Accept, X-Requested-With
+      Server:
+      - github.com
       X-Github-Request-Id:
-      - C1BD:5B23:339607C:34BECFF:62E2B1D5
+      - E475:1A1B14:3E6C49:42CADF:6740F5BD
     body:
       encoding: UTF-8
-      string: '{"message":"Bad credentials","documentation_url":"https://docs.github.com/rest"}'
-  recorded_at: Thu, 28 Jul 2022 15:57:09 GMT
+      string: '{"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}'
+  recorded_at: Fri, 22 Nov 2024 21:21:01 GMT
 recorded_with: VCR 6.1.0

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe ActAsApiClient::Clients::HttpClient do
+require "act_as_api_client/clients/http/simple_client"
+
+RSpec.describe ActAsApiClient::Clients::Http::SimpleClient do
   let(:github_client_class) do
     Class.new(ApiClient) do
       act_as_api_client for: :github_repositories, with: { token: "token1" }

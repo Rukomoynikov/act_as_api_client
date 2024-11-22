@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../http_client"
-
-# See the documentation on https://docs.anthropic.com/en/api/messages
+require "act_as_api_client/clients/http/simple_client"
 
 module ActAsApiClient
   module Clients
@@ -11,7 +9,7 @@ module ActAsApiClient
         ANTHROPIC_VERSION = "2023-06-01"
         BASE_URL = "https://api.anthropic.com/v1/messages"
 
-        include HttpClient
+        include ActAsApiClient::Clients::Http::SimpleClient
 
         # Sends request to Anthropic API https://docs.anthropic.com/en/api/messages
         #
