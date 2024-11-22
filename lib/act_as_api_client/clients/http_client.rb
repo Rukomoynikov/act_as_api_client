@@ -12,56 +12,60 @@ module ActAsApiClient
       private
 
       def get(url, **options)
-        # Request part
-        uri = URI(url)
-        uri.query = URI.encode_www_form(options.fetch(:params, {}))
+        uri = build_uri(url, **options)
 
         request = Net::HTTP::Get.new(uri)
         set_request_headers(headers: options.fetch(:headers, {}),
                             request: request)
 
-        # Response part
         response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           http.request(request)
         end
 
-        case response
-        when Net::HTTPNotFound, Net::HTTPSuccess, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized
-          ::JSON.parse(response.body)
-        end
+        parse_response(response)
       end
 
       def post(url, headers: {}, **options) # rubocop:disable Metrics/AbcSize
-        # Request part
-        uri = URI(url)
-        uri.query = URI.encode_www_form(options.fetch(:params, {}))
+        uri = build_uri(url, **options)
 
         request = Net::HTTP::Post.new(uri)
-
-        request.body = options.fetch(:body, {}).to_json
         set_request_headers(headers: headers, request: request)
+        request.body = options.fetch(:body, {}).to_json
 
-        # Response part
         response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           http.request(request)
         end
 
-        case response
-        when Net::HTTPSuccess, Net::HTTPBadRequest
-          ::JSON.parse(response.body)
-        when Net::HTTPNotFound, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized
-          ::JSON.parse(response.body)
-        end
-      rescue Net::OpenTimeout, Net::ReadTimeout, SocketError => e
-        raise ActAsApiClient::NetworkError, "Network error occurred: #{e.message}"
-      rescue JSON::ParserError => e
-        raise ActAsApiClient::InvalidResponseError, "Invalid JSON response: #{e.message}"
+        parse_response(response)
       end
 
       def set_request_headers(headers:, request:)
         headers.each do |key, value|
           request[key] = value
         end
+      end
+
+      private
+
+      def build_uri(url, **options)
+        uri = URI(url)
+        uri.query = URI.encode_www_form(options.fetch(:params, {}))
+
+        uri
+      end
+
+      def parse_response(response)
+        case response
+        when Net::HTTPSuccess, Net::HTTPBadRequest
+          ::JSON.parse(response.body)
+        when Net::HTTPNotFound, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized
+          ::JSON.parse(response.body)
+        end
+
+      rescue Net::OpenTimeout, Net::ReadTimeout, SocketError => e
+        raise ActAsApiClient::NetworkError, "Network error occurred: #{e.message}"
+      rescue JSON::ParserError => e
+        raise ActAsApiClient::InvalidResponseError, "Invalid JSON response: #{e.message}"
       end
     end
   end
