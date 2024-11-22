@@ -29,10 +29,24 @@ RSpec.describe ActAsApiClient::Clients::Anthropic::MessagesClient do
       end
     end
 
-    it "sends request" do
-      api_client.new.create(model: "claude-3-5-sonnet-20241022",
-                            messages: [{ "role": "user", "content": "Hello, world" }],
-                            max_tokens: 1024)
+    context "when params are valid" do
+      it "sends request" do
+        response = api_client.new.create(model: "claude-3-5-sonnet-20241022",
+                                         messages: [{ "role": "user", "content": "Hello, world" }],
+                                         max_tokens: 1024)
+
+        expect(response["content"][0]["text"]).to eq("Hi! How can I help you today?")
+      end
+    end
+
+    context "when params are invalid" do
+      it "sends request" do
+        response = api_client.new.create(model: "",
+                                         messages: [{ "role": "user", "content": "Hello, world" }],
+                                         max_tokens: 1024)
+
+        expect(response["type"]).to eq("error")
+      end
     end
   end
 end

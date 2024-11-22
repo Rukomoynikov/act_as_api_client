@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/messages
+    body:
+      encoding: UTF-8
+      string: '{"model":"","messages":[{"role":"user","content":"Hello, world"}],"max_tokens":1024,"stream":false,"temperature":1.0}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.anthropic.com
+      Content-Type:
+      - application/json
+      X-Api-Key: "<X-Api-Key>"
+      Anthropic-Version:
+      - '2023-06-01'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 22 Nov 2024 17:00:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '116'
+      Connection:
+      - keep-alive
+      X-Should-Retry:
+      - 'false'
+      Request-Id:
+      - req_01BJZcL8YzxB3nyouN1NmW5a
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e6a795b3e9876dd-LHR
+    body:
+      encoding: UTF-8
+      string: '{"type":"error","error":{"type":"invalid_request_error","message":"model:
+        String should have at least 1 character"}}'
+  recorded_at: Fri, 22 Nov 2024 17:00:08 GMT
+recorded_with: VCR 6.1.0

@@ -27,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 21 Nov 2024 19:43:23 GMT
+      - Fri, 22 Nov 2024 16:58:03 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -39,27 +39,27 @@ http_interactions:
       Anthropic-Ratelimit-Requests-Remaining:
       - '49'
       Anthropic-Ratelimit-Requests-Reset:
-      - '2024-11-21T19:43:24Z'
+      - '2024-11-22T16:58:04Z'
       Anthropic-Ratelimit-Input-Tokens-Limit:
       - '40000'
       Anthropic-Ratelimit-Input-Tokens-Remaining:
       - '40000'
       Anthropic-Ratelimit-Input-Tokens-Reset:
-      - '2024-11-21T19:43:23Z'
+      - '2024-11-22T16:58:03Z'
       Anthropic-Ratelimit-Output-Tokens-Limit:
       - '8000'
       Anthropic-Ratelimit-Output-Tokens-Remaining:
       - '8000'
       Anthropic-Ratelimit-Output-Tokens-Reset:
-      - '2024-11-21T19:43:23Z'
+      - '2024-11-22T16:58:03Z'
       Anthropic-Ratelimit-Tokens-Limit:
       - '48000'
       Anthropic-Ratelimit-Tokens-Remaining:
       - '48000'
       Anthropic-Ratelimit-Tokens-Reset:
-      - '2024-11-21T19:43:23Z'
+      - '2024-11-22T16:58:03Z'
       Request-Id:
-      - req_01JKQXbaoEEvwAooahNwRNdX
+      - req_019oZG5iwMqP8u3kFTAHkdQZ
       Via:
       - 1.1 google
       Cf-Cache-Status:
@@ -69,10 +69,10 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e632b1a3ffe718a-LHR
+      - 8e6a7647aa87cd3c-LHR
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"msg_01PaxHH9aa3E6i2ninGBDdMo","type":"message","role":"assistant","model":"claude-3-5-sonnet-20241022","content":[{"type":"text","text":"Hi
-        there! How can I help you today?"}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":10,"output_tokens":13}}'
-  recorded_at: Thu, 21 Nov 2024 19:43:23 GMT
+      string: '{"id":"msg_01Ey81jZRKxN7uUsMh3X2hU8","type":"message","role":"assistant","model":"claude-3-5-sonnet-20241022","content":[{"type":"text","text":"Hi!
+        How can I help you today?"}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":10,"output_tokens":12}}'
+  recorded_at: Fri, 22 Nov 2024 16:58:03 GMT
 recorded_with: VCR 6.1.0
