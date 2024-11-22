@@ -58,18 +58,6 @@ module ActAsApiClient
         raise ActAsApiClient::InvalidResponseError, "Invalid JSON response: #{e.message}"
       end
 
-      def put
-        # HTTParty.put
-      end
-
-      def update
-        # HTTParty.update
-      end
-
-      def delete
-        # HTTParty.delete
-      end
-
       def set_request_headers(headers:, request:)
         headers.each do |key, value|
           request[key] = value
