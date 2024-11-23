@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "act_as_api_client/clients/http/simple_client"
+require "act_as_api_client/clients/http/streaming_client"
 
 module ActAsApiClient
   module Clients
@@ -8,8 +9,6 @@ module ActAsApiClient
       module MessagesClient
         ANTHROPIC_VERSION = "2023-06-01"
         BASE_URL = "https://api.anthropic.com/v1/messages"
-
-        include ActAsApiClient::Clients::Http::SimpleClient
 
         # Sends request to Anthropic API https://docs.anthropic.com/en/api/messages
         #
@@ -27,8 +26,18 @@ module ActAsApiClient
         # @param top_p [Float] Use nucleus sampling
         #
         # @return [Hash] Response from Anthropic API
-        def create(**params)
-          post(BASE_URL, headers: headers, body: body(**params))
+        def create(**params, &block)
+          client = if params.fetch(:stream, false)
+                     ActAsApiClient::Clients::Http::StreamingClient.new
+                   else
+                     ActAsApiClient::Clients::Http::SimpleClient.new
+                   end
+
+          client.post(BASE_URL,
+                      headers: headers,
+                      stream: params.fetch(:stream, false),
+                      body: body(**params),
+                      &block)
         end
 
         private

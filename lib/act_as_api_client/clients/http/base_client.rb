@@ -12,6 +12,12 @@ module ActAsApiClient
 
           uri
         end
+
+        def set_request_headers(headers:, request:)
+          headers.each do |key, value|
+            request[key] = value
+          end
+        end
       end
     end
   end

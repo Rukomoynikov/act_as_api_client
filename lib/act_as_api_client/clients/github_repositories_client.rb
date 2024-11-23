@@ -5,8 +5,6 @@ require "act_as_api_client/clients/http/simple_client"
 module ActAsApiClient
   module Clients
     module GithubRepositoriesClient
-      include ActAsApiClient::Clients::Http::SimpleClient
-
       # Searches Github for one repository by it's owner and repository names.
       # More details look at the corresponding {https://docs.github.com/en/rest/repos/repos#get-a-repository Github Docs page}
       #
@@ -18,9 +16,11 @@ module ActAsApiClient
           raise StandardError, "repository_name parameter is not valid"
         end
 
-        get("https://api.github.com/repos/#{repository_name}",
-            headers: { "Accept" => "application/vnd.github.v3+json",
-                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
+        http_client = ActAsApiClient::Clients::Http::SimpleClient.new
+
+        http_client.get("https://api.github.com/repos/#{repository_name}",
+                        headers: { "Accept" => "application/vnd.github.v3+json",
+                                   "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
       end
 
       # Search through Github repositories using query string and additional parameters explained on the {https://docs.github.com/en/rest/search#search-repositories Github Docs page}
@@ -38,10 +38,12 @@ module ActAsApiClient
       #
       # @return [Array] list of repositories
       def where(query_string, parameters = {})
-        get("https://api.github.com/search/repositories",
-            headers: { "Accept" => "application/vnd.github.v3+json",
-                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) },
-            params: { q: query_string }.merge(parameters))
+        http_client = ActAsApiClient::Clients::Http::SimpleClient.new
+
+        http_client.get("https://api.github.com/search/repositories",
+                        headers: { "Accept" => "application/vnd.github.v3+json",
+                                   "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) },
+                        params: { q: query_string }.merge(parameters))
       end
 
       # Use this method if you need to get list of repositories selected by one of this conditions: user, authenticated_user, organization
@@ -72,9 +74,11 @@ module ActAsApiClient
                 "https://api.github.com/repositories"
               end
 
-        get(url,
-            headers: { "Accept" => "application/vnd.github.v3+json",
-                       "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
+        http_client = ActAsApiClient::Clients::Http::SimpleClient.new
+
+        http_client.get(url,
+                        headers: { "Accept" => "application/vnd.github.v3+json",
+                                   "Authorization" => (options[:token] ? "token #{options[:token]}" : nil) })
       end
     end
   end

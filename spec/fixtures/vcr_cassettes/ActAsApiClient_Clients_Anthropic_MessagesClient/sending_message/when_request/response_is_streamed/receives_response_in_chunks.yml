@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/messages
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-3-5-sonnet-20241022","messages":[{"role":"user","content":"Hello,
+        world"}],"max_tokens":1024,"stream":true,"temperature":1.0}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.anthropic.com
+      Content-Type:
+      - application/json
+      X-Api-Key: "<X-Api-Key>"
+      Anthropic-Version:
+      - '2023-06-01'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 19:01:05 GMT
+      Content-Type:
+      - text/event-stream; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Anthropic-Ratelimit-Requests-Limit:
+      - '50'
+      Anthropic-Ratelimit-Requests-Remaining:
+      - '49'
+      Anthropic-Ratelimit-Requests-Reset:
+      - '2024-11-23T19:01:06Z'
+      Anthropic-Ratelimit-Input-Tokens-Limit:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Remaining:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Reset:
+      - '2024-11-23T19:01:05Z'
+      Anthropic-Ratelimit-Output-Tokens-Limit:
+      - '8000'
+      Anthropic-Ratelimit-Output-Tokens-Remaining:
+      - '7000'
+      Anthropic-Ratelimit-Output-Tokens-Reset:
+      - '2024-11-23T19:01:13Z'
+      Anthropic-Ratelimit-Tokens-Limit:
+      - '48000'
+      Anthropic-Ratelimit-Tokens-Remaining:
+      - '47000'
+      Anthropic-Ratelimit-Tokens-Reset:
+      - '2024-11-23T19:01:05Z'
+      Request-Id:
+      - req_01Te5pE9T2qeDM78zTAoCAWC
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e7367e4ae2193e0-LHR
+    body:
+      encoding: UTF-8
+      string: |+
+        event: message_start
+        data: {"type":"message_start","message":{"id":"msg_01LTUZ9njPqg8kNK7qAGDFKy","type":"message","role":"assistant","model":"claude-3-5-sonnet-20241022","content":[],"stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":10,"output_tokens":1}}         }
+
+        event: content_block_start
+        data: {"type":"content_block_start","index":0,"content_block":{"type":"text","text":""}      }
+
+        event: ping
+        data: {"type": "ping"}
+
+        event: content_block_delta
+        data: {"type":"content_block_delta","index":0,"delta":{"type":"text_delta","text":"Hi"}           }
+
+        event: content_block_delta
+        data: {"type":"content_block_delta","index":0,"delta":{"type":"text_delta","text":"! Nice to meet you. How can I help you today"}     }
+
+        event: content_block_delta
+        data: {"type":"content_block_delta","index":0,"delta":{"type":"text_delta","text":"?"}           }
+
+        event: content_block_stop
+        data: {"type":"content_block_stop","index":0          }
+
+        event: message_delta
+        data: {"type":"message_delta","delta":{"stop_reason":"end_turn","stop_sequence":null},"usage":{"output_tokens":17}           }
+
+        event: message_stop
+        data: {"type":"message_stop"}
+
+  recorded_at: Sat, 23 Nov 2024 19:01:05 GMT
+recorded_with: VCR 6.1.0

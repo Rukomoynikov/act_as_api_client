@@ -48,5 +48,31 @@ RSpec.describe ActAsApiClient::Clients::Anthropic::MessagesClient do
         expect(response["type"]).to eq("error")
       end
     end
+
+    # rubocop:disable Layout/LineLength, RSpec/ExampleLength
+    context "when request/response is streamed" do
+      it "receives response in chunks" do
+        chunks = []
+        api_client.new.create(model: "claude-3-5-sonnet-20241022",
+                              messages: [{ "role": "user", "content": "Hello, world" }],
+                              max_tokens: 1024,
+                              stream: true) do |response|
+          chunks << response
+        end
+
+        expect(chunks).to eq([
+                               { "type" => "message_start", "message" => { "id" => "msg_01LTUZ9njPqg8kNK7qAGDFKy", "type" => "message", "role" => "assistant", "model" => "claude-3-5-sonnet-20241022", "content" => [], "stop_reason" => nil, "stop_sequence" => nil, "usage" => { "input_tokens" => 10, "output_tokens" => 1 } } },
+                               { "type" => "content_block_start", "index" => 0, "content_block" => { "type" => "text", "text" => "" } },
+                               { "type" => "ping" },
+                               { "type" => "content_block_delta", "index" => 0, "delta" => { "type" => "text_delta", "text" => "Hi" } },
+                               { "type" => "content_block_delta", "index" => 0, "delta" => { "type" => "text_delta", "text" => "! Nice to meet you. How can I help you today" } },
+                               { "type" => "content_block_delta", "index" => 0, "delta" => { "type" => "text_delta", "text" => "?" } },
+                               { "type" => "content_block_stop", "index" => 0 },
+                               { "type" => "message_delta", "delta" => { "stop_reason" => "end_turn", "stop_sequence" => nil }, "usage" => { "output_tokens" => 17 } },
+                               { "type" => "message_stop" }
+                             ])
+      end
+    end
+    # rubocop:enable Layout/LineLength, RSpec/ExampleLength
   end
 end
