@@ -13,6 +13,7 @@ GEM
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
+    event_stream_parser (1.0.0)
     hashdiff (1.0.1)
     parallel (1.22.1)
     parser (3.1.2.0)
@@ -63,6 +64,7 @@ PLATFORMS
 DEPENDENCIES
   act_as_api_client!
   byebug (~> 11.1)
+  event_stream_parser
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 0.80)
