@@ -11,7 +11,7 @@ require "act_as_api_client/clients/http/base_client"
 module ActAsApiClient
   module Clients
     module Http
-      module SimpleClient
+      class SimpleClient
         include BaseClient
 
         def get(url, **options)
@@ -39,12 +39,6 @@ module ActAsApiClient
           end
 
           parse_response(response)
-        end
-
-        def set_request_headers(headers:, request:)
-          headers.each do |key, value|
-            request[key] = value
-          end
         end
 
         private
