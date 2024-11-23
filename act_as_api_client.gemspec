@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "event_stream_parser"
+
   # Uncomment to register a new dependency of your gem
   spec.add_development_dependency "byebug", "~> 11.1"
   spec.add_development_dependency "rake", "~> 13.0"
