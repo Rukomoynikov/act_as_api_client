@@ -10,4 +10,4 @@ services:
       - ./:/app
     ports:
       - 4000:4000
-    command: bundle exec jekyll serve -H 0.0.0.0
+    command: bundle exec jekyll serve -H 0.0.0.0 --watch
