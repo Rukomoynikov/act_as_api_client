@@ -21,7 +21,7 @@
 title: Act as API client
 description: >- # this means to ignore newlines until "baseurl:"
   Simple gem to cover all your API needs.
-baseurl: ""
+baseurl: "/act_as_api_client"
 url: "https://rukomoynikov.github.io"
 # twitter_username: rukomoynikov
 # github_username: rukomoynikov
