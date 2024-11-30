@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: home
+image: "./assets/thumbnail.jpg"
 ---
 
 The Messages API lets you send messages with text or images, and receive a response from the AI model. You can use it in two main ways:

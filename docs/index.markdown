@@ -1,5 +1,6 @@
 ---
 layout: home
+image: "./assets/thumbnail.jpg"
 ---
 
 Collection of API clients tried and tested.
