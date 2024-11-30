@@ -4,7 +4,7 @@ layout: post
 
 The Messages API lets you send messages with text or images, and receive a response from the AI model. You can use it in two main ways:
 
-**Request:**
+**Simple sync request:**
 {% highlight ruby %}
 require "act_as_api_client"
 
@@ -24,9 +24,10 @@ pp anthropic_client.create(
   ],
   max_tokens: 1024
 )
+{% endhighlight %}
 
-# Async (stream)
-
+**Async (stream) request:**
+{% highlight ruby %}
 anthropic_client.create(
   model: "claude-3-5-sonnet-20241022",
   messages: [
