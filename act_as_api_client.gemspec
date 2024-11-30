@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     "source_code_uri" => "https://github.com/Rukomoynikov/act_as_api_client",
     "homepage_uri" => spec.homepage,
-    "documentation_uri" => "https://rubydoc.info/github/Rukomoynikov/act_as_api_client/main",
+    "documentation_uri" => "https://rukomoynikov.github.io/act_as_api_client/",
     "bug_tracker_uri" => "https://github.com/Rukomoynikov/act_as_api_client/issues"
   }
 
