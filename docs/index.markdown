@@ -3,7 +3,7 @@ layout: home
 image: "./assets/thumbnail.jpg"
 ---
 
-Collection of API clients tried and tested.
+![Act as api logo](/assets/thumbnail.jpg)
 
 ## Supported clients:
 
