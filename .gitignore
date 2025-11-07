@@ -17,3 +17,5 @@ spec/credentials.yml
 *.gem
 
 .DS_Store
+
+vendor
