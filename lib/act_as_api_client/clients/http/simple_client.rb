@@ -26,6 +26,8 @@ module ActAsApiClient
           end
 
           parse_response(response)
+        rescue Net::OpenTimeout, Net::ReadTimeout, SocketError => e
+          raise ActAsApiClient::Errors::NetworkError, "Network error occurred: #{e.message}"
         end
 
         def post(url, headers: {}, **options)
@@ -39,6 +41,8 @@ module ActAsApiClient
           end
 
           parse_response(response)
+        rescue Net::OpenTimeout, Net::ReadTimeout, SocketError => e
+          raise ActAsApiClient::Errors::NetworkError, "Network error occurred: #{e.message}"
         end
 
         private
@@ -50,8 +54,6 @@ module ActAsApiClient
           when Net::HTTPNotFound, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized
             ::JSON.parse(response.body)
           end
-        rescue Net::OpenTimeout, Net::ReadTimeout, SocketError => e
-          raise ActAsApiClient::Errors::NetworkError, "Network error occurred: #{e.message}"
         rescue JSON::ParserError => e
           raise ActAsApiClient::Errors::InvalidResponseError, "Invalid JSON response: #{e.message}"
         end
