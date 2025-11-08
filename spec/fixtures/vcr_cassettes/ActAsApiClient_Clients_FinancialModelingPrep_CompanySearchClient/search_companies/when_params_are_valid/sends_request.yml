@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://financialmodelingprep.com/api/v3/search?apikey=<apikey>&exchange&limit=10&query=AAPL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - financialmodelingprep.com
+      Content-Type:
+      - application/json
+      X-Api-Key: "<X-Api-Key>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Nov 2024 21:05:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - X-Requested-With, content-type, auth-token, Authorization, stripe-signature,
+        APPS, publicauthkey, privateauthkey
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '3600'
+      Etag:
+      - W/"698-Ego8tiu0WSClberKUk/669NmD/8"
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [
+          {
+            "symbol": "AAPL",
+            "name": "Apple Inc.",
+            "currency": "USD",
+            "stockExchange": "NASDAQ Global Select",
+            "exchangeShortName": "NASDAQ"
+          },
+          {
+            "symbol": "AAPL.L",
+            "name": "LS 1x Apple Tracker ETC",
+            "currency": "GBp",
+            "stockExchange": "London Stock Exchange",
+            "exchangeShortName": "LSE"
+          },
+          {
+            "symbol": "AAPL.NE",
+            "name": "Apple Inc.",
+            "currency": "CAD",
+            "stockExchange": "NEO",
+            "exchangeShortName": "NEO"
+          },
+          {
+            "symbol": "AAPL.MX",
+            "name": "Apple Inc.",
+            "currency": "MXN",
+            "stockExchange": "Mexico",
+            "exchangeShortName": "MEX"
+          },
+          {
+            "symbol": "AAPL.DE",
+            "name": "15994",
+            "currency": "EUR",
+            "stockExchange": "Frankfurt Stock Exchange",
+            "exchangeShortName": "XETRA"
+          },
+          {
+            "symbol": "AAPLUSTRAD.BO",
+            "name": "AA Plus Tradelink Limited",
+            "currency": "INR",
+            "stockExchange": "Bombay Stock Exchange",
+            "exchangeShortName": "BSE"
+          },
+          {
+            "symbol": "HARIAAPL.BO",
+            "name": "Haria Apparels Limited",
+            "currency": "INR",
+            "stockExchange": "Bombay Stock Exchange",
+            "exchangeShortName": "BSE"
+          },
+          {
+            "symbol": "APLY.NE",
+            "name": "Apple (AAPL) Yield Shares Purpose ETF",
+            "currency": "CAD",
+            "stockExchange": "Cboe CA",
+            "exchangeShortName": "NEO"
+          },
+          {
+            "symbol": "APLY",
+            "name": "YieldMax AAPL Option Income Strategy ETF",
+            "currency": "USD",
+            "stockExchange": "New York Stock Exchange Arca",
+            "exchangeShortName": "AMEX"
+          },
+          {
+            "symbol": "AAPD",
+            "name": "Direxion Daily AAPL Bear 1X Shares",
+            "currency": "USD",
+            "stockExchange": "NASDAQ Global Market",
+            "exchangeShortName": "NASDAQ"
+          }
+        ]
+  recorded_at: Sat, 30 Nov 2024 21:05:29 GMT
+recorded_with: VCR 6.1.0
