@@ -51,7 +51,7 @@ module ActAsApiClient
           case response
           when Net::HTTPSuccess, Net::HTTPBadRequest
             ::JSON.parse(response.body)
-          when Net::HTTPNotFound, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized
+          when Net::HTTPNotFound, Net::HTTPUnprocessableEntity, Net::HTTPUnauthorized, Net::HTTPTooManyRequests
             ::JSON.parse(response.body)
           end
         rescue JSON::ParserError => e
